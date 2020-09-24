@@ -1,9 +1,8 @@
 package kr.co.softcampus.controller;
 
+import kr.co.softcampus.beans.DataBean;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
 import java.util.Map;
@@ -33,5 +32,15 @@ public class TestController {
             System.out.println("data3 : " + str1);
         }
         return "test2";
+    }
+
+    @GetMapping(value = "/test3")
+    public String test3(@ModelAttribute DataBean bean1){
+        System.out.printf("data1 : %d\n", bean1.getData1());
+        System.out.printf("data2 : %d\n", bean1.getData2());
+        for(int number1 : bean1.getData3()){
+            System.out.printf("data3 : %d\n", number1);
+        }
+        return "result";
     }
 }

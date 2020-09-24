@@ -17,5 +17,6 @@
 				<input type="checkbox" name="data3" value="200"/>data3 200<br/>
 		<button type="submit">test2 post</button>
 	</form>
+	<a href="test3?data1=100&data2=200&data3=300&data3=400">test3 get</a>
 </body>
 </html>
